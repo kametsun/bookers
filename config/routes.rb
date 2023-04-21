@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
   #説明ページ
   get 'homes/top'
-  
+
   #トップ画面(Booksの)
   get 'books' => 'books#index', as: 'index_book'
-  
+
   #データ追加ルーティング
   post 'books' => 'books#create'
-  
+
   #投稿一覧画面
   get 'books/:id' => 'books#show'
 
   get 'books/detail'
-  
+
   #データ編集・アップデート
   patch 'books/:id' => 'books#update', as: 'update_book'
-  
+
   #投稿編集画面
   get 'books/:id/edit' => 'books#edit', as: 'edit_book'
-  
+
   #投稿詳細画面
   get 'books/:id' => 'books#show', as: 'book'
 
