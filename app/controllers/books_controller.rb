@@ -8,8 +8,8 @@ class BooksController < ApplicationController
     if @book.save
       #フラッシュメッセージ送信
       flash[:notice] = "Book was successfully created."
-      #トップ画面へリダイレクト
-      redirect_to "/books"
+      #詳細画面へリダイレクト
+      redirect_to "books/#{@book.id}"
     else
       @books = Book.all
       render :index
@@ -38,8 +38,11 @@ class BooksController < ApplicationController
     #データを１件取得
     book = Book.find(params[:id])
     #データを削除
-    book.destroy
-    redirect_to index_book_path
+    if book.destroy
+      #フラッシュメッセージ送信
+      flash[:notice] = "Book was successfully destroyed."
+      redirect_to index_book_path
+    end
   end
 
   def update
