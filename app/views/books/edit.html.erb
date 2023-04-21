@@ -3,9 +3,10 @@
 <% if @book.errors.any? %>
   <%= @book.errors.count %> error prohibited this book from being saved:<br>
   <ul>
-    <li><%= @book.errors.full_messages.each do |msg| %><%= msg %></li>
+    <% @book.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
   </ul>
-  <% end %>
 <% end %>
 
 <%= form_with model: @book, url:update_book_path(@book.id), method: :patch do |f| %>
