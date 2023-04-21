@@ -10,9 +10,14 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       #トップ画面へリダイレクト
       redirect_to '/books'
-    else 
-      render "new"
+    else
+      @books = Book.all
+      render :index
     end
+  end
+
+  def new
+
   end
 
   def index
@@ -39,10 +44,14 @@ class BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    #フラッシュメッセージ送信
-    flash[:notice] = "Book was successfully updated."
-    redirect_to book_path
+    if book.update(book_params)
+      #フラッシュメッセージ送信
+      flash[:notice] = "Book was successfully updated."
+      redirect_to book_path
+    else
+      @book = Book.find(params[:id])
+      render :edit
+    end
   end
 
   #ストロングパラメータ

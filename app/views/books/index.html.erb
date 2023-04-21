@@ -23,8 +23,10 @@
 
 <h2>New book</h2>
 <% if @book.errors.any? %>
-  <% @book.errors.full_messages.each do |msg| %>
-  <p><%= msg %></p>
+  <%= @book.errors.count %> error prohibited this book from being saved:<br>
+  <ul>
+    <li><%= @book.errors.full_messages.each do |msg| %><%= msg %></li>
+  </ul>
   <% end %>
 <% end %>
 
