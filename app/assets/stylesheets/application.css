@@ -1,6 +1,4 @@
-.notice {
-  color: green;
-}
+
 
 body {
   background-color: #fff;
@@ -48,4 +46,13 @@ label {
 li {
     display: list-item;
     text-align: -webkit-match-parent;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  cursor: default;
 }

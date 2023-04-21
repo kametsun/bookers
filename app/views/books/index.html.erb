@@ -31,19 +31,21 @@
 <% end %>
 
 <!-- フォーム -->
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<div class="create_book">
+  <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
-  <!-- タイトル -->
-  <div class="field">
-    <label for="book_title">Title</label>
-    <%= f.text_field :title %>
-  </div>
+    <!-- タイトル -->
+    <div class="field">
+      <label for="book_title">Title</label>
+      <%= f.text_field :title %>
+    </div>
 
-  <!-- 感想 -->
-  <div class="field">
-    <label for="book_body">Body</label>
-    <%= f.text_field :body %>
-  </div>
+    <!-- 感想 -->
+    <div class="field">
+      <label for="book_body">Body</label>
+      <%= f.text_area :body %>
+    </div>
 
   <%= f.submit 'Create Book' %>
-<% end %>
+  <% end %>
+</div>

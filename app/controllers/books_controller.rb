@@ -9,7 +9,7 @@ class BooksController < ApplicationController
       #フラッシュメッセージ送信
       flash[:notice] = "Book was successfully created."
       #トップ画面へリダイレクト
-      redirect_to '/books'
+      redirect_to "/books"
     else
       @books = Book.all
       render :index
