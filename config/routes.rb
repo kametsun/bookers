@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   #データ追加ルーティング
   post 'books' => 'books#create'
 
-  #投稿一覧画面
-  get 'books/:id' => 'books#show'
+  #投稿詳細画面
+  get '/books/:id' => 'books#show'
 
-  get 'books/detail'
+  #get 'books/detail'
 
   #データ編集・アップデート
   patch 'books/:id' => 'books#update', as: 'update_book'
