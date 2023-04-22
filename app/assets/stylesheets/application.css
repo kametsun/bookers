@@ -24,30 +24,30 @@ p,td {
 }
 
 a {
-  color: #000
+  color: #000;
 }
 
 a:visited {
-  color: #666
+  color: #666;
 }
 
 a:hover {
   color: #fff;
-  background-color: #000
+  background-color: #000;
 }
 
 th {
-   padding-bottom: 5px
+   padding-bottom: 5px;
 }
 
 td {
   padding-bottom: 7px;
   padding-left: 5px;
-  padding-right: 5px
+  padding-right: 5px;
 }
 
 label {
-  display: block
+  display: block;
 }
 
 li {
