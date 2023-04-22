@@ -41,7 +41,7 @@ class BooksController < ApplicationController
     if book.destroy
       #フラッシュメッセージ送信
       flash[:notice] = "Book was successfully destroyed."
-      redirect_to index_book_path
+      redirect_to books_path
     end
   end
 
